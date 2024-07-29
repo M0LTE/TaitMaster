@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaitMaster", "TaitMaster.csproj", "{8C7A3E00-1745-4495-8AEF-7A3D2EBA92EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C7A3E00-1745-4495-8AEF-7A3D2EBA92EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7A3E00-1745-4495-8AEF-7A3D2EBA92EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7A3E00-1745-4495-8AEF-7A3D2EBA92EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7A3E00-1745-4495-8AEF-7A3D2EBA92EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE877024-0BA8-4D1F-8DF1-8A23B3F10286}
+	EndGlobalSection
+EndGlobal
