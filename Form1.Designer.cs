@@ -39,8 +39,12 @@
             label4 = new Label();
             rssiValueLabel = new Label();
             peakRssiValue = new Label();
-            label6 = new Label();
             label5 = new Label();
+            label7 = new Label();
+            floorLabel = new Label();
+            label6 = new Label();
+            snrLabel = new Label();
+            stateBox = new TextBox();
             SuspendLayout();
             // 
             // serialPortList
@@ -91,9 +95,11 @@
             // logPane
             // 
             logPane.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            logPane.Location = new Point(12, 321);
+            logPane.BackColor = Color.White;
+            logPane.Location = new Point(12, 116);
             logPane.Multiline = true;
             logPane.Name = "logPane";
+            logPane.ReadOnly = true;
             logPane.Size = new Size(776, 117);
             logPane.TabIndex = 5;
             // 
@@ -141,15 +147,6 @@
             peakRssiValue.TabIndex = 11;
             peakRssiValue.Text = "dBm";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(376, 57);
-            label6.Name = "label6";
-            label6.Size = new Size(32, 15);
-            label6.TabIndex = 10;
-            label6.Text = "dBm";
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -159,14 +156,62 @@
             label5.TabIndex = 12;
             label5.Text = "peak:";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(420, 57);
+            label7.Name = "label7";
+            label7.Size = new Size(35, 15);
+            label7.TabIndex = 14;
+            label7.Text = "floor:";
+            // 
+            // floorLabel
+            // 
+            floorLabel.AutoSize = true;
+            floorLabel.Location = new Point(458, 57);
+            floorLabel.Name = "floorLabel";
+            floorLabel.Size = new Size(32, 15);
+            floorLabel.TabIndex = 13;
+            floorLabel.Text = "dBm";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(543, 57);
+            label6.Name = "label6";
+            label6.Size = new Size(32, 15);
+            label6.TabIndex = 16;
+            label6.Text = "SNR:";
+            // 
+            // snrLabel
+            // 
+            snrLabel.AutoSize = true;
+            snrLabel.Location = new Point(581, 57);
+            snrLabel.Name = "snrLabel";
+            snrLabel.Size = new Size(32, 15);
+            snrLabel.TabIndex = 15;
+            snrLabel.Text = "dBm";
+            // 
+            // stateBox
+            // 
+            stateBox.Location = new Point(426, 12);
+            stateBox.Name = "stateBox";
+            stateBox.ReadOnly = true;
+            stateBox.Size = new Size(29, 23);
+            stateBox.TabIndex = 17;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 245);
+            Controls.Add(stateBox);
+            Controls.Add(label6);
+            Controls.Add(snrLabel);
+            Controls.Add(label7);
+            Controls.Add(floorLabel);
             Controls.Add(label5);
             Controls.Add(peakRssiValue);
-            Controls.Add(label6);
             Controls.Add(rssiValueLabel);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -197,7 +242,11 @@
         private Label label4;
         private Label rssiValueLabel;
         private Label peakRssiValue;
-        private Label label6;
         private Label label5;
+        private Label label7;
+        private Label floorLabel;
+        private Label label6;
+        private Label snrLabel;
+        private TextBox stateBox;
     }
 }
