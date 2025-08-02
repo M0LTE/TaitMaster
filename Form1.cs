@@ -48,12 +48,22 @@ namespace TaitMaster
             radio = TaitRadio.Create(serialPortList.SelectedItem.ToString(), int.Parse(serialPortSpeedBox.Text), logger);
             radio.RawRssiUpdated += Radio_RawRssiUpdated;
             radio.StateChanged += Radio_StateChanged;
+            radio.VswrChanged += Radio_VswrChanged;
 
             peakTimer = new();
             peakTimer.Tick += PeakTimer_Tick;
             peakTimer.Interval = 1000;
             peakTimer.Start();
             PeakTimer_Tick(null, EventArgs.Empty);
+        }
+
+        private void Radio_VswrChanged(object? sender, VswrEventArgs e)
+        {
+            Invoke(() =>
+            {
+                swrBar.Value = (int)(Math.Min(e.Vswr, 10) * 100.0);
+                swrValueLabel.Text = e.Vswr.ToString("0.00") + " : 1";
+            });
         }
 
         bool receivingNoise = true;
@@ -69,14 +79,20 @@ namespace TaitMaster
                 if (e.To == RadioState.ReceivingNoise)
                 {
                     stateBox.BackColor = Color.Gray;
+                    swrBar.Value = 1;
                 }
                 else if (e.To == RadioState.ReceivingSignal)
                 {
                     stateBox.BackColor = Color.Green;
+                    swrBar.Value = 1;
+                }
+                else if (e.To == RadioState.Transmitting)
+                {
+                    stateBox.BackColor = Color.Red;
                 }
                 else
                 {
-                    stateBox.BackColor = Color.Red;
+                    stateBox.BackColor = Color.Blue;
                 }
             });
         }
@@ -141,6 +157,7 @@ namespace TaitMaster
                 });
             }
             catch (ObjectDisposedException) { }
+            catch (InvalidOperationException) { }
         }
 
         private void SetConnectControlsToConnected()

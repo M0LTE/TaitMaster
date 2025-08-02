@@ -45,6 +45,9 @@
             label6 = new Label();
             snrLabel = new Label();
             stateBox = new TextBox();
+            label8 = new Label();
+            swrBar = new ProgressBar();
+            swrValueLabel = new Label();
             SuspendLayout();
             // 
             // serialPortList
@@ -90,7 +93,7 @@
             serialPortSpeedBox.Name = "serialPortSpeedBox";
             serialPortSpeedBox.Size = new Size(59, 23);
             serialPortSpeedBox.TabIndex = 4;
-            serialPortSpeedBox.Text = "28800";
+            serialPortSpeedBox.Text = "19200";
             // 
             // logPane
             // 
@@ -200,11 +203,42 @@
             stateBox.Size = new Size(29, 23);
             stateBox.TabIndex = 17;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(12, 86);
+            label8.Name = "label8";
+            label8.Size = new Size(31, 15);
+            label8.TabIndex = 19;
+            label8.Text = "SWR";
+            // 
+            // swrBar
+            // 
+            swrBar.Location = new Point(47, 82);
+            swrBar.Maximum = 1000;
+            swrBar.Minimum = 1;
+            swrBar.Name = "swrBar";
+            swrBar.Size = new Size(148, 23);
+            swrBar.TabIndex = 18;
+            swrBar.Value = 1;
+            // 
+            // swrValueLabel
+            // 
+            swrValueLabel.AutoSize = true;
+            swrValueLabel.Location = new Point(203, 86);
+            swrValueLabel.Name = "swrValueLabel";
+            swrValueLabel.Size = new Size(46, 15);
+            swrValueLabel.TabIndex = 20;
+            swrValueLabel.Text = "SWR : 1";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 245);
+            Controls.Add(swrValueLabel);
+            Controls.Add(label8);
+            Controls.Add(swrBar);
             Controls.Add(stateBox);
             Controls.Add(label6);
             Controls.Add(snrLabel);
@@ -248,5 +282,8 @@
         private Label label6;
         private Label snrLabel;
         private TextBox stateBox;
+        private Label label8;
+        private ProgressBar swrBar;
+        private Label swrValueLabel;
     }
 }
